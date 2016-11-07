@@ -1,3 +1,5 @@
+// src/components/app.js
+
 import React, { Component } from 'react';
 import TodoFrom from './todoForm';
 
@@ -8,6 +10,7 @@ class App extends Component {
         this.displayTodo = this.displayTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        
         this.state = { term: "" };
     }
     handleChange(e) {
