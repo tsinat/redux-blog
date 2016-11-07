@@ -1,7 +1,11 @@
 // src/components/app.js
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as action from '../actions';
+
 import TodoFrom from './todoForm';
+import TodoItem from './todoItem';
 
 class App extends Component {
     constructor(props){
@@ -10,7 +14,7 @@ class App extends Component {
         this.displayTodo = this.displayTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        
+
         this.state = { term: "" };
     }
     handleChange(e) {
@@ -19,10 +23,16 @@ class App extends Component {
     }
     addTodo(e) {
         e.preventDefault();
-        //dispatch action
+        this.props.addTodo(this.state.term);
     }
     displayTodo(){
-        //display todos to the view
+        const todoList = this.props.todo.map((todo) => {
+            console.log(todo);
+            return (
+                <TodoItem key={todo.id} todo={todo}/>
+            )
+        });
+        return todoList;
     }
   render() {
     return (
@@ -37,5 +47,10 @@ class App extends Component {
     );
   }
 }
+function mapPropToState(state) {
+    return {
+        todo: state.todo
+    };
+}
 
-export default App;
+export default connect(mapPropToState, action)(App);
