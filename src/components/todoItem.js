@@ -1,4 +1,4 @@
-// src/components/todoForm.js
+// src/components/todoItem.js
 
 import React from 'react'
 
