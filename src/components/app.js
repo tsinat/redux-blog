@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import TodoFrom from './todoForm';
 
 class App extends Component {
     constructor(props){
         super(props)
 
         this.displayTodo = this.displayTodo.bind(this);
+        this.addTodo = this.addTodo.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.state = { term: "" };
     }
     handleChange(e) {
@@ -16,28 +19,17 @@ class App extends Component {
         //dispatch action
     }
     displayTodo(){
-        console.log('it is working');
+        //display todos to the view
     }
   render() {
     return (
         <div className="row">
-            <div className="col-sm-6 col-sm-offset-3">
-                <form className="form-inline" onSubmit={ this.addTodo.bind(this)}>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="text"
-                            value={this.state.term}
-                            placeholder="add todo"
-                            onChange={ this.handleChange.bind(this)}
-                            />
-                        <button className="btn btn-default">Add</button>
-                    </div>
-                </form>
-
-                { this.displayTodo()}
-
-            </div>
+            <TodoFrom
+                term={ this.state.term }
+                addTodo={ this.addTodo }
+                handleChange={ this.handleChange}
+                />
+            { this.displayTodo()}
         </div>
     );
   }
