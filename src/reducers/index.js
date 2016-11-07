@@ -1,3 +1,5 @@
+// src/reducers/index.js
+
 import { combineReducers } from 'redux';
 import todoReducers from './todoReducers';
 
