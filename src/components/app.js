@@ -10,7 +10,6 @@ import TodoItem from './todoItem';
 class App extends Component {
     constructor(props){
         super(props)
-
         this.displayTodo = this.displayTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.handleChange = this.handleChange.bind(this);
