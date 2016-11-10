@@ -8,6 +8,7 @@ import TodoFrom from './todoForm';
 import TodoItem from './todoItem';
 
 class App extends Component {
+    
     constructor(props){
         super(props)
         this.displayTodo = this.displayTodo.bind(this);
