@@ -3,7 +3,6 @@
 import React from 'react'
 
 export default (props) => {
-    
     return (
         <div className=" text-center">
             <div className="col-sm-6 ">
