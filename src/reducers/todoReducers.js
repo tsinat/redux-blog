@@ -2,6 +2,7 @@
 import { ADD_TODO, REMOVE_TODO } from '../actions';
 import shortid from 'shortid';
 
+
 export default function( state = [], action) {
     switch(action.type) {
         case ADD_TODO:
