@@ -1,9 +1,7 @@
 // src/components/todoItem.js
-
 import React from 'react'
 
 export default (props) => {
-    
     return (
         <table className="table">
             <tbody>
